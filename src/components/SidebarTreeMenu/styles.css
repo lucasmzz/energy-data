@@ -1,0 +1,23 @@
+.tree-menu {
+  padding: 10px;
+}
+.treenode {
+  padding: 10px;
+  cursor: pointer;
+}
+.treenode-parent {
+  margin-left: 10px;
+}
+
+.treenode-children {
+  margin-left: 10px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.selected {
+  background-color: cornflowerblue;
+}

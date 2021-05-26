@@ -1,7 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./styles.css";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+} from "recharts";
 
 const formatMeasurements = (list) => {
   const m = [];
@@ -35,12 +42,14 @@ const AssetDisplay = ({ assetMeasurements }) => {
   if (assetMeasurements && assetMeasurements.measurements) {
     const measures = formatMeasurements(assetMeasurements.measurements);
     const renderLineChart = (
-      <LineChart width={1400} height={600} data={measures}>
-        <Line type="monotone" dataKey="value" stroke="#8884d8" />
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="date" />
-        <YAxis />
-      </LineChart>
+      <ResponsiveContainer width="70%" height="80%">
+        <LineChart data={measures}>
+          <Line type="monotone" dataKey="value" stroke="#8884d8" />
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="date" />
+          <YAxis />
+        </LineChart>
+      </ResponsiveContainer>
     );
     return <div className="asset-display">{renderLineChart}</div>;
   }

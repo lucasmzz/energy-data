@@ -21,7 +21,6 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return { selectedAsset: state.selectedAsset };
 }
 
